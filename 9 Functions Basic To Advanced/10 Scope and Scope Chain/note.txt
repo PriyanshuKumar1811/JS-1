@@ -1,0 +1,44 @@
+lexical Environment
+-------------------
+
+    Reference to outer lexical Environment
+
+    |  --------------------------------------------------  
+    |  |  Variable Environment  |  Thread of execution  |  
+    |  |                        |                       |  
+    |  |                        |                       |--> Function Execution Context   
+    |  |                        |   console.log({c});   |    for function z
+    |  |                        |                       |  
+    |  |                        |                       |  
+    |  --------------------------------------------------
+    |
+    |
+    |  --------------------------------------------------  
+    |  |  Variable Environment  |  Thread of execution  |  
+    |  |                        |                       |  
+    |  |    c: 7                |   let c = 7;          |--> Function Execution Context   
+    |  |    z: fn               |   console.log({b});   |    for function y
+    |  |                        |   z();                |  
+    |  |                        |                       |  
+    |  --------------------------------------------------
+    |
+    |
+    |  --------------------------------------------------  
+    |  |  Variable Environment  |  Thread of execution  |  
+    |  |                        |                       |  
+    |  |    b: 5                |   let b = 5;          |--> Function Execution Context   
+    |  |    y: fn               |   console.log({a});   |    for function x
+    |  |                        |   y();                |  
+    |  |                        |                       |  
+    |  --------------------------------------------------                                    
+    |                                                                             
+    |  --------------------------------------------------  
+    |  |  Variable Environment  |  Thread of execution  |  
+    |  |                        |                       |  
+    |  |    a: 3                |   let a = 3;          |--> Global Execution Context  
+    |  |    x: fn               |   x();                |  
+    |  |                        |                       |  
+    |  |                        |                       |  
+    |  --------------------------------------------------
+    -------------------------------------------------------------------------------------
+                            Call Stack

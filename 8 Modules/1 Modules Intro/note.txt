@@ -1,0 +1,12 @@
+Modules in JavaScript
+---------------------
+
+    --> Simply a file containing code that can be reused in other files.
+
+    Why?
+    ----
+
+        --> Organized Code: Split large programs into smaller files.
+        --> Reusability: Write a function once and reuse it anywhere.
+        --> Maintainability: Easier to debug and update because each module focuses on a 
+            specific functionability.

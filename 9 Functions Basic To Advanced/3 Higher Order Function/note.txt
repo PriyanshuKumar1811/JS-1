@@ -1,0 +1,56 @@
+Higher-Order Function
+---------------------
+
+    A function that accepts another function as an argument or returns a function or does both is called 
+    an H.O.F.
+    
+    A higher-order function is a function that does at least one of the following:
+
+        1. Takes one or more functions as arguments.
+        2. Returns a function as a result.
+
+
+        1. Basic Example of Higher-Order Functions
+        ------------------------------------------
+
+            function wrapper() {
+                return "Welcome to GeeksForGeeks";
+            }
+
+            function greetMessage(inner, name) {
+                console.log(name, inner());
+            }
+
+            greetMessage(wrapper, "Prakash");
+
+
+            Output:
+            Prakash Welcome to GeeksForGeeks
+
+            First Class Function: wrapper
+            Higher-Order Function: greetMessage
+
+            In this example, greetMessage is a higher-order function because it accepts wrapper, another function, as an argument. The wrapper function is called within greetMessage, allowing us to dynamically insert different messages.
+
+
+        2. Returning Functions from a Function
+        --------------------------------------
+
+            function displayMessage() {
+                return function() {
+                    console.log("Hello from the inner function");
+                };
+            }
+            const output = displayMessage();
+            output();
+
+
+            Output:
+            Hello from the inner function
+
+            First Class Function: inner function
+            Higher-Order Function: displayMessage
+
+            Here, displayMessage is a higher-order function because it returns another function. 
+            When displayMessage is called, it returns the inner function, which is then assigned to output. 
+            We can then call output() to execute the returned function.

@@ -1,0 +1,135 @@
+script-1.js
+-----------
+
+    console.log(`value of x is ${x}`);
+    var x = 10;
+
+    Global Execution Context
+    ------------------------
+
+        Memory Phase (Variable Environment)                 Code Phase (Thread of Execution)
+        -----------------------------------                 --------------------------------
+    
+        var x = undefined --> 10                            console.log(`value of x is ${x}`);
+                                                            var x = 10;
+    
+        Output
+        value of x is undefined
+
+
+script-2.js
+-----------
+
+    x = 30;
+    console.log(`value of x is ${x}`);
+    var x = 10;
+
+    Global Execution Context
+    ------------------------
+
+        Memory Phase (Variable Environment)                 Code Phase (Thread of Execution)
+        -----------------------------------                 --------------------------------
+
+        var x = undefined --> 30 --> 10                     x = 30;
+                                                            console.log(`value of x is ${x}`);
+                                                            var x = 10;
+        
+        Output
+        value of x is 30
+
+
+script-3.js
+-----------
+
+    console.log("Global Execution Context Starts");
+
+    var globalVariable = "I am a global variable";
+
+    console.log(globalVariable);
+    globalFunction();
+
+    function globalFunction() {
+        console.log("Inside global function");
+    }
+
+    console.log("Global Execution Context Ends");
+
+
+    Global Execution Context
+    ------------------------
+
+        Memory Phase (Variable Environment)                             Code Phase (Thread of Execution)
+        -----------------------------------                             --------------------------------
+
+        var globalVariable = undefined --> I am a global variable       console.log("Global Execution Context Starts");
+
+        function globalFunction() {                                     var globalVariable = "I am a global variable";
+            console.log("Inside global function");
+        }                                                               console.log(globalVariable);
+                                                                        globalFunction();
+
+                                                                        Function Execution Context
+                                                                        --------------------------
+
+                                                                            Memory Phase (Variable Environment)         Code Phase (Thread of Execution)
+                                                                            -----------------------------------         --------------------------------
+
+                                                                                                                        console.log("Inside global function");
+
+                                                                        function globalFunction() {
+                                                                            console.log("Inside global function");
+                                                                        }
+
+                                                                        console.log("Global Execution Context Ends");
+
+        Output
+        Global Execution Context Starts
+        I am a global variable
+        Inside global function
+        Global Execution Context Ends
+
+
+script-4.js
+-----------
+
+    console.log("Global Execution Context Starts");
+
+    var globalVariable = "I am a global variable";
+
+    console.log(globalVariable);
+    console.log(globalFunction);
+    globalFunction();
+
+    var globalFunction = function() {
+        console.log("Inside global function");
+    };
+
+    console.log("Global Execution Context Ends");
+
+
+    Global Execution Context
+    ------------------------
+
+        Memory Phase (Variable Environment)                             Code Phase (Thread of Execution)
+        -----------------------------------                             --------------------------------
+
+        var globalVariable = undefined --> I am a global variable       console.log("Global Execution Context Starts");
+
+        var globalFunction = undefined                                  var globalVariable = "I am a global variable";
+                                |
+                                |                                       console.log(globalVariable);
+                        function() {                                    console.log(globalFunction);
+                            console.log("Inside global function");      globalFunction();
+                        };
+                                                                        var globalFunction = function() {
+                                                                            console.log("Inside global function");
+                                                                        };
+                        
+                                                                        console.log("Global Execution Context Ends");
+        
+        Output
+        Global Execution Context Starts
+        I am a global variable
+        undefined
+        Error: globalFunction is not a function
+        Global Execution Context Ends

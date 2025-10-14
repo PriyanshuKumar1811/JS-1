@@ -1,0 +1,15 @@
+Type conversion
+---------------
+
+    Type conversion is an essential concept in JavaScript that allows us to convert one data type into another.
+
+    Converting to Boolean
+    ---------------------
+
+        Conversion Rules:
+        -----------------
+
+            Any non-empty string is true.
+            An empty string is false.
+            The number 0 is false.
+            Any other number is true.

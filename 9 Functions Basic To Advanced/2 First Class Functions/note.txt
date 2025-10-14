@@ -1,0 +1,75 @@
+First-Class Function
+--------------------
+
+    In JavaScript, functions are treated as "first-class citizens." But what does this mean? 
+    Functions can be:
+
+        1. Assigned to variables
+        2. Passed as arguments to other functions
+        3. Returned from other functions
+
+
+        1. Assigning a Function to a Variable
+        -------------------------------------
+
+            You can assign a function to a variable, making the function accessible via the variable name.
+
+            const greetMessage = function() {
+                console.log("Hello Prakash");
+            };
+            greetMessage();
+
+
+            Output
+            Hello Prakash
+
+            Here, greetMessage is a variable that holds a function. When you call greetMessage(), 
+            it executes the function.
+
+
+        2. Passing a Function as an Argument to Another Function
+        --------------------------------------------------------
+
+            function wrapper() {
+                return "Welcome to GeeksForGeeks";
+            }
+
+            function greetMessage(inner, name) {
+                console.log(name, inner());
+            }
+
+            greetMessage(wrapper, "Prakash");
+
+
+            Output
+            Prakash Welcome to GeeksForGeeks
+
+            In this example, wrapper function is passed as an argument to greetMessage. Notice that we pass the reference of the function (wrapper) without parentheses, meaning the function is not executed 
+            immediately. Inside greetMessage, we call inner() to execute the function.
+
+
+        3. Returning a Function from Another Function
+        ---------------------------------------------
+
+            function greetMessage() {
+                function wrapper() {
+                    let name = "Prakash";
+                    console.log(name, "Welcome to GeeksForGeeks");
+                }
+                return wrapper;
+            }
+            const output = greetMessage();
+            output();
+            greetMessage()();
+
+
+            Output
+            Prakash Welcome to GeeksForGeeks
+            Prakash Welcome to GeeksForGeeks
+
+            In this example, greetMessage returns another function. When we call greetMessage(), it returns the inner function, which we then store in the output variable. Finally, we call output() to execute the returned function.
+
+            Alternatively, you can also call the returned function directly:
+            greetMessage()();
+
+            Here, greetMessage() is called first, which returns the inner function, and then the returned function is immediately executed with the second pair of parentheses.

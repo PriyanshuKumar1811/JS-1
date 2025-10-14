@@ -1,0 +1,61 @@
+ReadlineSync
+------------
+
+    Why Type Conversion is Important
+    --------------------------------
+
+        When taking data from an input field, it is usually in the form of a string, 
+        even if the user enters a number. To perform numeric operations, you need to convert these strings to 
+        numbers.
+
+
+    Installing Necessary Packages
+    -----------------------------
+
+        Before we dive into the code, we need to set up our environment. 
+        Ensure you have Node.js installed on your system. Node.js comes with npm (Node Package Manager), 
+        which we will use to install packages.
+
+        1. Install Node.js: Download and install Node.js from the official website.
+        2. Install readline-sync Package: This package allows us to read user input from the terminal.
+
+        Open your terminal and run the following command to install readline-sync:
+
+            npm install readline-sync / npm i readline-sync
+
+
+    Getting User Input
+    ------------------
+
+        1. Set Up readline-sync:
+
+            const readlineSync = require('readline-sync');
+
+        2. Ask for User Input:
+
+            const userName = readlineSync.question('May I know your name ');
+            console.log(userName);
+
+            const userAge = readlineSync.question('May I know your age ');
+            const userAgeNumber = Number(userAge);
+
+        Converting String to Number: The Number() function converts the string input to a number. 
+        If the input is not a valid number, it returns NaN (Not-a-Number).
+
+    
+    Running the Code
+    ----------------
+
+        To run this code, open your terminal, navigate to the directory containing your script, and use the 
+        following command:
+
+        node your-script-file.js / node your-script-file
+
+        Replace your-script-file.js with the name of your JavaScript file.
+
+
+    Key Points:
+    -----------
+
+        1. Type Conversion: Converting data from one type to another is essential for performing various operations.
+        2. User Input: Using readline-sync to read user input from the terminal.

@@ -1,0 +1,17 @@
+JavaScript Nullish Coalescing
+-----------------------------
+
+    --> In JavaScript, nullish coalescing is a new type of logical operator that was introduced to help simplify 
+        handling undefined and null values. This operator can help prevent pitfalls that might occur when working 
+        with values like undefined, null, 0, or an empty string.
+
+    --> The nullish coalescing operator (??) is used to assign a default value to a variable when the value is 
+        either null or undefined. This is particularly useful when you want to provide a fallback value only for 
+        null or undefined, but you want to keep values like 0 or an empty string ("") intact.
+
+    --> The syntax for the nullish coalescing operator is:
+
+            let result = value ?? defaultValue;
+
+            If value is neither null nor undefined, it will return value.
+            If value is null or undefined, it will return defaultValue.

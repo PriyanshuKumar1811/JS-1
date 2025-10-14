@@ -1,0 +1,71 @@
+Execution Context in Javascript
+-------------------------------
+
+    Introduction
+    ------------
+
+        Execution context is a fundamental concept in JavaScript that dictates how the code is executed.
+    
+
+    Browser and JavaScript Engine
+    -----------------------------
+
+        When a browser encounters JavaScript code, it activates the JavaScript engine. 
+        Each browser has its own JavaScript engine (ex- V8 in Chrome, SpiderMonkey in Firefox).
+
+        Execution Context in Javascript:    Browser -> JavaScript Engine
+
+
+    Execution Context
+    -----------------
+
+        The JavaScript engine creates an environment called the execution context to execute the code. 
+        This environment manages the memory allocation and the execution of the code.
+
+
+    Types of Execution Context
+    --------------------------
+
+        1.  Global Execution Context (GEC):     Created when the JavaScript engine starts executing the code. 
+                                                There is only one GEC per JavaScript file.
+
+        2.  Functional Execution Context (FEC):     Created whenever a function is invoked. 
+                                                    There can be multiple FECs depending on the number of function calls.
+
+    
+    Components of Execution Context:
+    --------------------------------
+
+        1. Variable Object: Contains variable and function declarations.
+        2. Scope Chain: Manages the scope and scope chain.
+        3. this Keyword: Sets the value of this.
+
+
+    Creation of Execution Context
+    -----------------------------
+
+        Execution context is created in two phases:
+
+            1. Creation Phase:
+            ------------------
+
+                Memory allocation for variables and functions.
+                Variables declared with var are assigned undefined.
+                Function declarations are assigned the function definition.
+
+            2. Execution Phase:
+            -------------------
+
+                Code is executed line by line.
+                JavaScript is a single-threaded synchronous language, meaning it executes one line of code at a 
+                time in order.
+
+
+    Importance of Understanding Execution Context
+    ---------------------------------------------
+
+        Understanding execution context is crucial for several reasons:
+
+        1. Code Execution: It helps in understanding how JavaScript executes code line by line.
+        2. Debugging: It aids in debugging by showing the sequence of function calls.
+        3. Memory Management: It helps in understanding how memory is allocated and deallocated.

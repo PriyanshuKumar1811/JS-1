@@ -1,0 +1,83 @@
+How JS executes code
+--------------------
+
+    JavaScript Execution Context: An Overview
+    -----------------------------------------
+
+        Whenever JavaScript encounters a code snippet, it activates the JavaScript engine, which creates an 
+        environment called the execution context. This context is created in two phases:
+
+            1. Creation Phase: Allocates memory to variables and functions.
+            2. Execution Phase: Executes the code line by line.
+
+
+        Creation Phase
+        --------------
+
+            In the creation phase, the JavaScript engine:
+
+                1. Scans through the code.
+                2. Allocates memory for variables declared with var and function declarations.
+                3. Assigns undefined to variables and stores the function definitions.
+
+
+        Execution Phase
+        ---------------
+
+            In the execution phase, the JavaScript engine:
+
+                1. Executes the code line by line.
+                2. Updates the values of variables and executes functions.
+
+
+    script.js
+    ---------
+
+        var x = 5;
+        function getSum(num) {
+            var y = 7;
+            var total = num + y;
+            return total;
+        }
+        var result1 = getSum(x);
+        var result2 = getSum(9);
+
+    
+    When you run this whole code a global EXECUTION CONTEXT is created and it contains two parts one is memory 
+    and the other is code execution.
+
+
+    Global Execution Context
+    ------------------------
+
+        Memory Phase (Variable Environment)                 Code Phase (Thread of Execution)
+        -----------------------------------                 --------------------------------
+
+        x : undefined --> 5                                 var x = 5;
+        
+        getSum : fn(num) {                                  Function Execution Context
+                    var y = 7;                              --------------------------
+                    var total = num + y;
+                    return total;                               Memory Phase (Variable Environment)             Code Phase (Thread of Execution)
+                }                                               -----------------------------------             --------------------------------
+                                                                (Arguments Object)
+        
+        result1 : undefined --> 12                                  num : undefined --> 5
+        result2 : undefined --> 16                                                            
+                                                                    y : undefined --> 7
+
+                                                                    total : undefined --> 12
+
+
+                                                            Function Execution Context
+                                                            ------------------------
+
+                                                                Memory Phase (Variable Environment)             Code Phase (Thread of Execution)
+                                                                -----------------------------------             --------------------------------
+
+                                                                    num : undefined --> 9
+                                                                    
+                                                                    y : undefined --> 7
+
+                                                                    total : undefined --> 16
+    

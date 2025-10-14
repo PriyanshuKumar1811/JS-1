@@ -1,0 +1,11 @@
+Variable Naming Convention
+--------------------------
+
+    Rules for Naming Variables
+    --------------------------
+
+        1. Characters Allowed: A variable name can consist of letters (both uppercase and lowercase), numbers, 
+        the dollar sign ($), and the underscore (_).
+        2. No Leading Numbers: A variable name cannot start with a number but can end with number.
+        3. No Special Characters: Avoid special characters such as @, #, -, or brackets.
+        4. Case Sensitivity: Remember that variable names are case-sensitive.

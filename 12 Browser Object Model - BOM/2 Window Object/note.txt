@@ -1,0 +1,50 @@
+Window Object
+-------------
+
+    The window object is the global object provided by the Browser Object Model (BOM). It represents the 
+    browser's window or tab and serves as the root object for all JavaScript code in a web page.
+
+
+Key Features of the window object
+---------------------------------
+
+    Global Scope:
+    Any variable or function declared globally becomes a property of the window object.
+
+
+Browser Environment Controller
+------------------------------
+
+    The window object provides access to browser-related properties and methods, such as the URL, 
+    navigation history, and screen dimensions.
+
+    methods like alert(), setTimeout(), and console.log() are actually part of the window object.
+
+
+URL and Navigation
+------------------
+
+    location:   Provides information about the current URL and allows redirection.   
+    history:    Allows navigation through the browser history.
+    navigator:  Gives information about the browser and user agent.
+
+
+Screen Information
+------------------
+
+    screen - Provides details about the user's screen (e.g. width, height).
+
+
+Dialog Boxes
+------------
+
+    alert() -   Displays an alert box with a message.
+    confirm() - Displays a dialog box with "OK" and "Cancel" buttons.
+    prompt() -  Displays a dialog box asking for user input.
+
+
+Timers
+------
+
+    setTimeout()  / clearTimeout()
+    setInterval() / clearInterval()

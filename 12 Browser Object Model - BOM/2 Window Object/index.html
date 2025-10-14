@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>window object</h1>
+    <div class="container">
+        <button id="showUrl">Show Current URL</button>
+        <button id="redirect"> Redirect to Google</button>
+        <button id="screenInfo" onclick="screenInfo()">Show Screen Information</button>
+        <button id="showAlert" onclick="showAlert()">Alert Box</button>
+        <button id="showConfirm" onclick="showConfirm()">Confirm Box</button>
+        <button id="showPrompt" onclick="showPrompt()">Prompt Box</button>
+    </div>
+</body>
+<script>
+    window.console.log(window);
+
+    var yourName = "I dont know";
+    window.console.log(window.yourName);
+    window.console.log(yourName);
+    console.log(yourName);
+
+    function showAlert() {
+        window.alert("Anything");
+    }
+
+    console.log(window.location.href);
+
+    function showConfirm() {
+        const result = confirm("Do you want to visit google");
+        if (result) {
+            window.location.href = "https://www.google.com";
+        }
+    }
+
+    function showPrompt() {
+        const result = prompt("What's Your Age");
+
+        if (Number(result) >= 18) {
+            alert("You are Eligible to vote");
+        } else {
+            alert("You are not Eligible to vote");
+        }
+    }
+
+    function screenInfo() {
+        console.log(`Screen width ${screen.width} and Screen height ${screen.height}`);
+    }
+
+    console.log(window.history);
+    console.log(screen);
+    console.log(navigator);
+    console.log(navigator.onLine);
+</script>
+</html>

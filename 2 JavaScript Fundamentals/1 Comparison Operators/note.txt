@@ -1,0 +1,19 @@
+JavaScript Comparison Operators
+-------------------------------
+
+    --> In JavaScript, strings are compared based on their ASCII (Unicode) values.
+    --> When comparing two strings, JavaScript checks their characters from left to right, comparing the ASCII 
+        values of each character.
+    --> This comparison is case-sensitive, meaning uppercase letters have a lower ASCII value than lowercase 
+        letters, which affects string comparisons.
+
+    --> Loose Equality (==): Converts the values before comparing them.
+    --> Strict Equality (===): Checks both the value and the type.
+
+    --> The strict equality operator (===) does not perform type conversion.
+
+    --> null has unique behavior when used in mathematical comparisons (such as <, >, <=, >=). 
+        In these comparisons, null is treated as 0.
+
+    --> JavaScript automatically converts strings to numbers in numerical comparisons.
+    --> Undefined always results in false in numerical comparisons.
