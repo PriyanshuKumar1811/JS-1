@@ -1,5 +1,5 @@
-const modules = require("./script-1.js");
+const allTheModules = require("./script-1.js");
 
-console.log(modules);
+console.log(allTheModules);
 
-modules.print("Prakash");
+allTheModules.print("Prakash");
